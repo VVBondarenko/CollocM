@@ -34,7 +34,7 @@ void solve_cup(double A, double B, int N)
 	printf("System solved\n");
 	
 	FILE *op;
-	op = fopen("plot", "w");
+	op = fopen("./output/plot", "w");
 	for(arg=A;arg<B;arg+=0.01)
 	{	
 		//output = res[1]*f_cup((arg-A-step)/step)/1.8;
@@ -49,7 +49,7 @@ void solve_cup(double A, double B, int N)
 	}
 	fclose(op);
 	
-	op = fopen("dots", "w");
+	op = fopen("./output/dots", "w");
 	for(arg=A;arg<=B;arg+=step)
 	{
 		fprintf(op,"%f %f\n",arg,sin(arg));
@@ -71,7 +71,7 @@ void solve_B3(double A, double B, int N)
 	solve3DiagInterp(f_dd_B_3( 1.0),f_dd_B_3( 0.0),&F,&res,N);
 
 	FILE *op;
-	op = fopen("plot", "w");
+	op = fopen("./output/plot", "w");
 	for(arg=A;arg<B;arg+=0.01)
 	{		
 		output = -res[1]*f_B_3((arg-A)/step)*f_B_3(1.0)/6.0;
@@ -85,7 +85,7 @@ void solve_B3(double A, double B, int N)
 	}
 	fclose(op);
 	
-	op = fopen("dots", "w");
+	op = fopen("./output/dots", "w");
 	for(arg=A;arg<=B;arg+=step)
 	{
 		fprintf(op,"%f %f\n",arg,sin(arg));

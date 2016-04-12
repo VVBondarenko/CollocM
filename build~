@@ -1,4 +1,5 @@
 #!/bin/bash
 
 gcc -Wall -o ./bin/main ./src/main.c -lm
-read -p "Done with code $?"
+#xmessage "Done with code $?"
+zenity --info "Done with code $?"
