@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ./bin/main
-read -p "Press any key to exit"
+#read -p "Press any key to exit"
