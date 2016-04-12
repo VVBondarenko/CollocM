@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gcc -Wall -o ./bin/main ./src/main.c -lm
+xmessage "Done with code $?"
