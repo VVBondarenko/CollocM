@@ -1,0 +1,2 @@
+# CollocM
+Collocations method 
