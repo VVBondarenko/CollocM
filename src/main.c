@@ -174,7 +174,7 @@ void solveB3(double A, double B, int n)
 	gsl_vector_fprintf (stdout, x, "%g");
 	
 	FILE *op;
-	op = fopen("plot.b3", "w");
+	op = fopen("./output/plot.b3", "w");
 	/*for(i=0;i<n+2;i++)
 		fprintf(op,"%f %f\n",(double)(i)*step,gsl_vector_get(x,i));
 	*/
@@ -189,7 +189,7 @@ void solveB3(double A, double B, int n)
 		fprintf(op,"%f %f\n",arg,outp);
 	}
 	fclose(op);
-	op = fopen("plot.b3.err", "w");
+	op = fopen("./output/plot.b3.err", "w");
 	for(arg = A; arg<=B; arg+=0.01)
 	{
 		outp = 0.0;
@@ -201,7 +201,7 @@ void solveB3(double A, double B, int n)
 	}
 	fclose(op);
 	
-	op = fopen("plot.b3.d.err", "w");
+	op = fopen("./output/plot.b3.d.err", "w");
 	for(arg = A; arg<=B; arg+=0.01)
 	{
 		outp = 0.0;
@@ -212,7 +212,7 @@ void solveB3(double A, double B, int n)
 		//fprintf(op,"%f %f\n",arg,outp);
 	}
 	fclose(op);
-	op = fopen("plot.b3.d", "w");
+	op = fopen("./output/plot.b3.d", "w");
 	for(arg = A; arg<=B; arg+=step)
 	{
 		outp = 0.0;
@@ -224,7 +224,7 @@ void solveB3(double A, double B, int n)
 	}
 	fclose(op);
 	
-	op = fopen("plot.b3.dd.err", "w");
+	op = fopen("./output/plot.b3.dd.err", "w");
 	for(arg = A; arg<=B; arg+=0.01)
 	{
 		outp = 0.0;
@@ -235,7 +235,7 @@ void solveB3(double A, double B, int n)
 		//fprintf(op,"%f %f\n",arg,outp);
 	}
 	fclose(op);
-	op = fopen("plot.b3.dd", "w");
+	op = fopen("./output/plot.b3.dd", "w");
 	for(arg = A; arg<=B; arg+=0.01)
 	{
 		outp = 0.0;
@@ -247,19 +247,19 @@ void solveB3(double A, double B, int n)
 	}
 	fclose(op);
 	
-	op = fopen("solution", "w");
+	op = fopen("./output/solution", "w");
 	for(arg=A;arg<=B;arg+=0.01)
 	{
 		fprintf(op,"%f %f\n",arg,f_e(arg));
 	}
 	fclose(op);
-	op = fopen("d_solution", "w");
+	op = fopen("./output/d_solution", "w");
 	for(arg=A;arg<=B;arg+=0.01)
 	{
 		fprintf(op,"%f %f\n",arg,d_f_e(arg));
 	}
 	fclose(op);
-	op = fopen("dd_solution", "w");
+	op = fopen("./output/dd_solution", "w");
 	for(arg=A;arg<=B;arg+=0.01)
 	{
 		fprintf(op,"%f %f\n",arg,f(arg));
@@ -331,7 +331,7 @@ void solveCup(double A, double B, int n)
 	gsl_vector_fprintf (stdout, x, "%g");
 	
 	FILE *op;
-	op = fopen("plot.cup", "w");
+	op = fopen("./output/plot.cup", "w");
 	/*for(i=0;i<n+2;i++)
 		fprintf(op,"%f %f\n",(double)(i)*step,gsl_vector_get(x,i));
 	*/
@@ -346,7 +346,7 @@ void solveCup(double A, double B, int n)
 		fprintf(op,"%f %f\n",arg,outp);
 	}
 	fclose(op);
-	op = fopen("plot.cup.d", "w");
+	op = fopen("./output/plot.cup.d", "w");
 	for(arg = A; arg<=B; arg+=step)
 	{
 		outp = 0.0;
@@ -357,7 +357,7 @@ void solveCup(double A, double B, int n)
 		fprintf(op,"%f %f\n",arg,outp);
 	}
 	fclose(op);
-	op = fopen("plot.cup.d.err", "w");
+	op = fopen("./output/plot.cup.d.err", "w");
 	for(arg = A; arg<=B; arg+=step)
 	{
 		outp = 0.0;
@@ -369,7 +369,7 @@ void solveCup(double A, double B, int n)
 	}
 	fclose(op);
 	
-	op = fopen("plot.cup.dd", "w");
+	op = fopen("./output/plot.cup.dd", "w");
 	for(arg = A; arg<=B; arg+=0.01)
 	{
 		outp = 0.0;
@@ -380,7 +380,7 @@ void solveCup(double A, double B, int n)
 		fprintf(op,"%f %f\n",arg,outp);
 	}
 	fclose(op);
-	op = fopen("plot.cup.dd.err", "w");
+	op = fopen("./output/plot.cup.dd.err", "w");
 	for(arg = A; arg<=B; arg+=step)
 	{
 		outp = 0.0;
@@ -393,7 +393,7 @@ void solveCup(double A, double B, int n)
 	fclose(op);
 
 	
-	op = fopen("plot.cup.err", "w");
+	op = fopen("./output/plot.cup.err", "w");
 	for(arg = A; arg<=B; arg+=0.01)
 	{
 		outp = 0.0;
@@ -404,7 +404,7 @@ void solveCup(double A, double B, int n)
 		//fprintf(op,"%f %f\n",arg,outp);
 	}
 	fclose(op);
-	op = fopen("dots", "w");
+	op = fopen("./output/dots", "w");
 	for(arg=A;arg<=B;arg+=0.01)
 	{
 		fprintf(op,"%f %f\n",arg,f_e(arg));
