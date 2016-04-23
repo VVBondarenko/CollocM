@@ -1,5 +1,7 @@
 #!/bin/bash
 
-gcc -Wall -o ./bin/main ./src/main.c -lm
+#gcc -Wall -I/usr/local/include -c "" -lgsl -lgslcblas -lm
+gcc -L/usr/local/lib -o "./bin/main" "./src/main.c" -lgsl -lgslcblas -lm -g
+#gcc -Wall -o ./bin/main ./src/main.c -lm
 #xmessage "Done with code $?"
 zenity --info --text "Done with code $?"
