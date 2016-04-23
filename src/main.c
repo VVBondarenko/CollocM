@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "B-splines.c"
-#include "sle.c"
+//#include "sle.c"
 #include "sle2.0.c"
 #include "smplDynArray.c"
 #include <gsl/gsl_linalg.h>
