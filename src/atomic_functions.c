@@ -5,7 +5,7 @@
 
 double  x	[4096]; //values of x where up(x) is avaliable
 double upx	[4096]; //function  up (x)
-double dup	[4096]; //function up' (x) (is it req.?)
+double d_up	[4096]; //function up' (x) (is it req.?)
 double ddup	[4096]; //function up''(x) (is it req.?)
 
 double 	cup [8192];	//function cup(x) values
@@ -61,8 +61,8 @@ void init_up(){	//calculates up(x), up`(x), up``(x)
 	}
 	for(n=0;n<size_l/2;n++)
 	{
-			dup[n] = 2.0*upx[2*n];
-			dup[n+size_l/2] = -2.0*upx[2*n];
+			d_up[n] = 2.0*upx[2*n];
+			d_up[n+size_l/2] = -2.0*upx[2*n];
 			if(n<size_l/4)
 			{
 				ddup[n] = 			 4.0*upx[4*n];
@@ -180,7 +180,7 @@ void init_cup()
         for (j = 0; j < N; ++j)
         {
 			 cup[i + j] += upx[i] * upx[N-1-j];
-            dcup[i + j] += dup[i] * upx[N-1-j];
+            dcup[i + j] += d_up[i] * upx[N-1-j];
         }
     }
 

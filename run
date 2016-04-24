@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./bin/main
+./bin/main $(zenity --entry --text "Resolution:")
 #read -p "Press any key to exit"
-./plot
+#./plot

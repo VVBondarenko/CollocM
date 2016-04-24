@@ -1,6 +1,6 @@
-set terminal x11
-set output
+set terminal wxt
+#set output
 
 
-plot "./output/plot" with line lw 3, "./output/dots"
+plot "./output/dots" with line lw 1, "./output/plot.b3" lw 2 lt 3, "./output/plot.cup" lw 1 lt 4
 pause mouse button1
