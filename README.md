@@ -1,2 +1,0 @@
-# CollocM
-Collocations method 

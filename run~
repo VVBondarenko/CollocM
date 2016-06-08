@@ -1,5 +1,0 @@
-#!/bin/bash
-
-./bin/main
-#read -p "Press any key to exit"
-#./plot
