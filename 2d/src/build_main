@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gcc -L/usr/local/lib "main.c" -lgsl -lgslcblas -lm -g -O3 -o ../bin/solver
+cp ../bin/solver ~/bin
