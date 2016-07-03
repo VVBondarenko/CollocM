@@ -1,0 +1,52 @@
+[editor]
+line_wrapping=false
+line_break_column=90
+auto_continue_multiline=true
+
+[file_prefs]
+final_new_line=true
+ensure_convert_new_lines=false
+strip_trailing_spaces=false
+replace_tabs=false
+
+[indentation]
+indent_width=4
+indent_type=1
+indent_hard_tab_width=8
+detect_indent=false
+detect_indent_width=false
+indent_mode=2
+
+[project]
+name=CollocM_2D
+base_path=/home/vbondarenko/projects/CollocM/1d/src
+description=
+file_patterns=
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=90
+
+[files]
+current_page=0
+FILE_NAME_0=555;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fmain.c;0;4
+FILE_NAME_1=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Faf_fourier.c;0;4
+FILE_NAME_2=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fmatrix_reader.c;0;4
+FILE_NAME_3=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fright_parts.c;0;4
+FILE_NAME_4=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fbuild_main;0;4
+FILE_NAME_5=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2FB-splines.c;0;4
+
+[VTE]
+last_dir=/home/vbondarenko/projects/CollocM/2d/src
+
+[build-menu]
+EX_00_LB=_Execute
+EX_00_CM="./%e" 8
+EX_00_WD=
+CFT_00_LB=_Compile
+CFT_00_CM=gcc -c "%f" -L/usr/local/lib -lgsl -lgslcblas -lm -g -O3 
+CFT_00_WD=
+CFT_01_LB=_Build
+CFT_01_CM=gcc -o "%e" "%f" -L/usr/local/lib -lgsl -lgslcblas -lm -g -O3
+CFT_01_WD=
+filetypes=C;
