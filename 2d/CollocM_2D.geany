@@ -29,7 +29,7 @@ long_line_column=90
 
 [files]
 current_page=0
-FILE_NAME_0=555;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fmain.c;0;4
+FILE_NAME_0=1007;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fmain.c;0;4
 FILE_NAME_1=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Faf_fourier.c;0;4
 FILE_NAME_2=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fmatrix_reader.c;0;4
 FILE_NAME_3=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fright_parts.c;0;4
