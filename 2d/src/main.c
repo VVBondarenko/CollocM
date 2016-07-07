@@ -7,9 +7,9 @@
 #include "B-splines.c"
 #include "af_fourier.c"
 int         N = 5;
-double      X0 = 0.,
+double      X0 = 0,
 			X1 = M_PI,
-			Y0 = 0.,
+			Y0 = 0,
 			Y1 = M_PI,
 			stepx, stepy, diff_step, glob_delta;
 
@@ -18,17 +18,27 @@ double right_part_f(double x, double y)
 {
 	//return 12.*(y*y*(x*x*x*x-1.) + x*x*(y*y*y*y-1.));
 	return -2.*sin(x)*sin(y);
+	//return 2.*exp((-1. + x*x)*(-1. + y*y))*
+	//(-2. + 3.*y*y + 2.*x*x*x*x*y*y + 
+     //x*x*(3. - 8.*y*y + 2.*y*y*y*y));
 }
 
 double u_exact(double x, double y)
 {
+	//return exp((x*x-1.)*(y*y-1.));
+	
 	return sin(x)*sin(y);
 }
 
 double omega(double x, double y)
 {
-	
-	return (x-X0)*(x-X1)*(y-Y0)*(y-Y1);
+	//double h = (x-X0)*(x-X1)*(y-Y0)*(y-Y1);	
+	//if(h>=1.) return 1.;
+	//else
+	//{
+		//return h;
+	//}
+	return (x-X0)*(x-X1)*(y-Y0)*(y-Y1);	
 	//return tanh((x-X0)*(x-X1)*(y-Y0)*(y-Y1)*10.);
 	//return tanh(100.*(x-X0))*tanh(100.*(X1-x))*tanh(100.*(y-Y0))*tanh(100.*(Y1-y));
 	//return (x*x-1.)*(y*y-1.);
@@ -37,15 +47,32 @@ double omega(double x, double y)
 
 double phi(double x, double y)
 {
-	return f_B_3(x)*f_B_3(y);
+	//return f_B_3(x)*f_B_3(y);
 	//return f_fup(x,2)*f_fup(y,2);
+	//return f_cup(x)*f_cup(y);
+	return f_fup3_poly(x)*f_fup3_poly(y);
+}
+
+double phi_fup(double x, double y)
+{
+	//return f_B_3(x)*f_B_3(y);
+	return f_fup(x,3)*f_fup(y,3);
 	//return f_cup(x)*f_cup(y);
 }
 
 double basis(double x, double y, int n)
 {
-	return phi( (x-X0-stepx*(double)(1+n/N))/stepx,
-			(y-Y0-stepy*(double)(1+n%N))/stepy )* omega(x,y);
+	//if(n/N == 0 || n%N == 0 || n/N == N-1 || n%N == N-1)
+	//{
+		//if(omega(x,y)>=0)
+			//return phi_fup( 0.5*(x-X0-stepx*(double)(1+n/N))/stepx,
+			//0.5*(y-Y0-stepy*(double)(1+n%N))/stepy )* omega(x,y);
+		//else 
+			//return 0.;
+	//}
+	//else 
+		return phi( 0.3333333333*(x-X0-stepx*(double)(1+n/N))/stepx,
+			0.33333333333*(y-Y0-stepy*(double)(1+n%N))/stepy )* omega(x,y);
 }
 
 double laplacian_basis(double x, double y, int n)
@@ -117,7 +144,7 @@ void plot_region
 		for(j=y1; j<=y2; j+=hy)
 			fprintf(op, "%f %f %f\n", i,j, reconstruct_at(solution,i,j));
 	fclose(op);
-	system("./Plot");
+	i = system("./Plot");
 }
 
 void plot_region_error
@@ -136,7 +163,7 @@ void plot_region_error
 		for(j=y1; j<=y2; j+=hy)
 			fprintf(op, "%f %f %f\n", i,j, fabs(reconstruct_at(solution,i,j)-u_exact(i,j)));
 	fclose(op);
-	system("./Plot_err");
+	i = system("./Plot_err");
 }
 
 void errors_to_stdio
@@ -177,8 +204,11 @@ int main(int argc, char **argv)
 	//fclose(op);
 	
 	solve_matrix_eq		(solution, sys, rightpart);
+	
 	plot_region			(solution, X0,X1, Y0,Y1);
 	plot_region_error	(solution, X0,X1, Y0,Y1);
+	
 	errors_to_stdio		(solution, X0,X1, Y0,Y1);
+	
 	return 0;
 }
