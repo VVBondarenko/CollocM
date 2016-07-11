@@ -1,0 +1,8 @@
+#!/usr/bin/gnuplot -persist
+
+#num = system('echo $1')
+set pm3d; set palette
+set dgrid3d 65,65
+set hidden3d
+splot "../plot_data/plot_region_error" with line
+#pause -1

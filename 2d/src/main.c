@@ -7,27 +7,26 @@
 #include "B-splines.c"
 #include "af_fourier.c"
 int         N = 5;
-double      X0 = 0,
-			X1 = M_PI,
-			Y0 = 0,
-			Y1 = M_PI,
+double      X0 = -1.,
+			X1 = 1.,
+			Y0 = -1.,
+			Y1 = 1.,
 			stepx, stepy, diff_step, glob_delta;
 
 
 double right_part_f(double x, double y)
 {
 	//return 12.*(y*y*(x*x*x*x-1.) + x*x*(y*y*y*y-1.));
-	return -2.*sin(x)*sin(y);
-	//return 2.*exp((-1. + x*x)*(-1. + y*y))*
-	//(-2. + 3.*y*y + 2.*x*x*x*x*y*y + 
-     //x*x*(3. - 8.*y*y + 2.*y*y*y*y));
+	//return -2.*sin(x)*sin(y);
+	return 2.*exp((-1.+x*x)*(-1.+y*y))*(-2.+3.*y*y+2.*x*x*x*x*y*y + 
+     x*x*(3. - 8.*y*y + 2.*y*y*y*y));
 }
 
 double u_exact(double x, double y)
 {
-	//return exp((x*x-1.)*(y*y-1.));
+	return exp((x*x-1.)*(y*y-1.))-1.;
 	
-	return sin(x)*sin(y);
+	//return sin(x)*sin(y);
 }
 
 double omega(double x, double y)
@@ -38,7 +37,8 @@ double omega(double x, double y)
 	//{
 		//return h;
 	//}
-	return (x-X0)*(x-X1)*(y-Y0)*(y-Y1);	
+	return (x-X0)*(x-X1)*(y-Y0)*(y-Y1);
+	//return (1-x)*(1+x)+(1-y)*(1+y)-sqrt(pow(1-x,2)*pow(1+x,2)+pow(1-y,2)*pow(1+y,2));
 	//return tanh((x-X0)*(x-X1)*(y-Y0)*(y-Y1)*10.);
 	//return tanh(100.*(x-X0))*tanh(100.*(X1-x))*tanh(100.*(y-Y0))*tanh(100.*(Y1-y));
 	//return (x*x-1.)*(y*y-1.);
@@ -47,10 +47,10 @@ double omega(double x, double y)
 
 double phi(double x, double y)
 {
-	//return f_B_3(x)*f_B_3(y);
+	return f_B_3(x)*f_B_3(y);
 	//return f_fup(x,2)*f_fup(y,2);
 	//return f_cup(x)*f_cup(y);
-	return f_fup3_poly(x)*f_fup3_poly(y);
+	//return f_fup3_poly(x)*f_fup3_poly(y);
 }
 
 double phi_fup(double x, double y)
