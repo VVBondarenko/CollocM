@@ -62,21 +62,21 @@ double phi_fup(double x, double y)
 
 double basis(double x, double y, int n)
 {
-	//if(n/N == 0 || n%N == 0 || n/N == N-1 || n%N == N-1)
-	//{
-		//if(omega(x,y)>=0)
-			//return phi_fup( 0.5*(x-X0-stepx*(double)(1+n/N))/stepx,
-			//0.5*(y-Y0-stepy*(double)(1+n%N))/stepy )* omega(x,y);
-		//else 
-			//return 0.;
-	//}
-	//else 
-	if( n/N <= 2 || n%N <= 2 || n%N >= (N-3) || n/N >= (N-3))
-		return phi( 0.6666666666*(x-X0-stepx*(double)(1+n/N))/stepx,
-			0.6666666666*(y-Y0-stepy*(double)(1+n%N))/stepy )* omega(x,y);
-	else
-		return phi( 0.6666666666*(x-X0-stepx*(double)(1+n/N))/stepx,
-			0.6666666666*(y-Y0-stepy*(double)(1+n%N))/stepy );
+/*
+ * 
+ * 	- \phi*\omega везде					fup	0.025742 2/3 coef | 1/3 0.040864
+ *	- \phi*\omega только на границе		fup	0.025629 2/3 coef | 1/3 0.137500
+
+ *	- на границе						B_3	0.294823 2/3 coef | 1/3 0.022808
+ *	- везде								B_3	0.293138 2/3 coef | 1/3 0.007089
+ * 
+ */
+	//if( n/N <= 2 || n%N <= 2 || n%N >= (N-3) || n/N >= (N-3))
+		return phi( 0.33333333333*(x-X0-stepx*(double)(1+n/N))/stepx,
+			0.33333333333*(y-Y0-stepy*(double)(1+n%N))/stepy )* omega(x,y);
+	//else
+		//return phi( 0.33333333333*(x-X0-stepx*(double)(1+n/N))/stepx,
+			//0.33333333333*(y-Y0-stepy*(double)(1+n%N))/stepy );
 			
 }
 
