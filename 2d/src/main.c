@@ -47,10 +47,10 @@ double omega(double x, double y)
 
 double phi(double x, double y)
 {
-	return f_B_3(x)*f_B_3(y);
+	//return f_B_3(x)*f_B_3(y);
 	//return f_fup(x,2)*f_fup(y,2);
 	//return f_cup(x)*f_cup(y);
-	//return f_fup3_poly(x)*f_fup3_poly(y);
+	return f_fup3_poly(x)*f_fup3_poly(y);
 }
 
 double phi_fup(double x, double y)
@@ -71,8 +71,13 @@ double basis(double x, double y, int n)
 			//return 0.;
 	//}
 	//else 
-		return phi( 0.3333333333*(x-X0-stepx*(double)(1+n/N))/stepx,
-			0.33333333333*(y-Y0-stepy*(double)(1+n%N))/stepy )* omega(x,y);
+	if( n/N <= 2 || n%N <= 2 || n%N >= (N-3) || n/N >= (N-3))
+		return phi( 0.6666666666*(x-X0-stepx*(double)(1+n/N))/stepx,
+			0.6666666666*(y-Y0-stepy*(double)(1+n%N))/stepy )* omega(x,y);
+	else
+		return phi( 0.6666666666*(x-X0-stepx*(double)(1+n/N))/stepx,
+			0.6666666666*(y-Y0-stepy*(double)(1+n%N))/stepy );
+			
 }
 
 double laplacian_basis(double x, double y, int n)

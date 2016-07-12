@@ -29,8 +29,8 @@ long_line_column=90
 
 [files]
 current_page=0
-FILE_NAME_0=1007;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fmain.c;0;4
-FILE_NAME_1=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Faf_fourier.c;0;4
+FILE_NAME_0=1148;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fmain.c;0;4
+FILE_NAME_1=228;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Faf_fourier.c;0;4
 FILE_NAME_2=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fmatrix_reader.c;0;4
 FILE_NAME_3=0;C;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fright_parts.c;0;4
 FILE_NAME_4=0;Sh;0;EUTF-8;1;1;0;%2Fhome%2Fvbondarenko%2Fprojects%2FCollocM%2F2d%2Fsrc%2Fbuild_main;0;4
@@ -41,7 +41,7 @@ last_dir=/home/vbondarenko/projects/CollocM/2d/src
 
 [build-menu]
 EX_00_LB=_Execute
-EX_00_CM="./%e" 8
+EX_00_CM="./%e" 6
 EX_00_WD=
 CFT_00_LB=_Compile
 CFT_00_CM=gcc -c "%f" -L/usr/local/lib -lgsl -lgslcblas -lm -g -O3 
